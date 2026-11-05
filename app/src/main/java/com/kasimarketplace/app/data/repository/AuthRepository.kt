@@ -3,6 +3,7 @@ package com.kasimarketplace.app.data.repository
 import com.kasimarketplace.app.data.local.SessionManager
 import com.kasimarketplace.app.data.model.LoginRequest
 import com.kasimarketplace.app.data.model.RegisterRequest
+import com.kasimarketplace.app.data.model.GoogleLoginRequest
 import com.kasimarketplace.app.data.remote.ApiService
 
 /**
