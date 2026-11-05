@@ -19,7 +19,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         // Base URL for the deployed REST API. Replace with your Render URL once deployed.
-        buildConfigField("String", "BASE_URL", "\"https://kasi-marketplace-api.onrender.com/\"")
+        buildConfigField("String", "BASE_URL", "\"https://kasi-marketplace-api-gxeredfpgef6dqgn.spaincentral-01.azurewebsites.net/\"")
     }
 
     buildTypes {
