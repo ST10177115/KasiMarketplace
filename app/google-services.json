@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "59408116658",
+    "project_id": "kasimarketplace-b6e3a",
+    "storage_bucket": "kasimarketplace-b6e3a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59408116658:android:33b99b01f8283004da52ab",
+        "android_client_info": {
+          "package_name": "com.kasimarketplace.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59408116658-gebkl1ug2l693eb6ctulccob2fs1t3se.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kasimarketplace.app",
+            "certificate_hash": "e175e897032008e8b15c9c35a6e692432c26cac7"
+          }
+        },
+        {
+          "client_id": "59408116658-b0hb0cjklr3magf4824ieveurgjl85cm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtoDttCuzoTXxmsscWBq-9OpP_10fYNvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59408116658-b0hb0cjklr3magf4824ieveurgjl85cm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
