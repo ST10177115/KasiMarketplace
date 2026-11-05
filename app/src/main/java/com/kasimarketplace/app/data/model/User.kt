@@ -26,6 +26,10 @@ data class LoginRequest(
     val email: String,
     val password: String
 )
+/** Sent to POST /api/v1/auth/google. Holds the Firebase ID token obtained after Google sign-in. */
+data class GoogleLoginRequest(
+    val idToken: String
+)
 
 /** Returned by both register and login on success. Contains the JWT used for all further calls. */
 data class AuthResponse(

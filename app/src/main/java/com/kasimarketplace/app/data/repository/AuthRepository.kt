@@ -46,6 +46,25 @@ class AuthRepository(
         }
     }
 
+    /**
+     * Exchanges a Firebase ID token (from Google sign-in) for this API's own JWT,
+     * then stores it exactly like a normal login so the rest of the app is unaffected.
+     */
+    suspend fun loginWithGoogle(idToken: String): Result<Unit> {
+        return try {
+            val response = apiService.loginWithGoogle(GoogleLoginRequest(idToken))
+            if (response.isSuccessful && response.body() != null) {
+                val body = response.body()!!
+                sessionManager.saveSession(body.token, body.user.id, body.user.name)
+                Result.success(Unit)
+            } else {
+                Result.failure(Exception(response.errorBody()?.string() ?: "Google sign-in failed"))
+            }
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
     suspend fun logout() {
         sessionManager.clearSession()
     }

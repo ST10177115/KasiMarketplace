@@ -8,8 +8,18 @@ const userSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, trim: true },
     email: { type: String, required: true, unique: true, lowercase: true, trim: true },
-    // Never store a raw password. This field always holds a bcrypt hash.
-    passwordHash: { type: String, required: true },
+    // Never store a raw password. For email/password accounts this holds a bcrypt hash.
+    // Accounts created through Google sign-in have no password, so it is only required
+    // when there is no googleId.
+    passwordHash: {
+      type: String,
+      required: function () {
+        return !this.googleId;
+      },
+    },
+    // Firebase/Google user ID. "sparse" lets many users have no googleId without
+    // clashing on the unique index.
+    googleId: { type: String, unique: true, sparse: true },
     phone: { type: String, trim: true },
     preferredLanguage: { type: String, enum: ["en", "zu", "xh"], default: "en" },
     isVendor: { type: Boolean, default: false },
@@ -29,6 +39,7 @@ const userSchema = new mongoose.Schema(
         delete ret._id;
         delete ret.__v;
         delete ret.passwordHash;
+        delete ret.googleId; // internal link to the Google account, not needed by the app
         return ret;
       },
     },
