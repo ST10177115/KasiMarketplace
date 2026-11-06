@@ -4,6 +4,10 @@ An Android marketplace app for township (kasi) buyers and sellers, backed by a N
 
 > \*\*Student:\*\* Banathi Maholwana (ST10177115) · \*\*Module:\*\* OPSC6312 · \*\*Submission:\*\* POE Part 3
 
+## Demo Video
+
+https://youtube.com/shorts/Dz0M_AwSyIo
+
 ## Live API
 
 The API is deployed on Azure App Service (Spain Central):
